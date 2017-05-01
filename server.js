@@ -17,8 +17,6 @@ var configDB = require('./config/database.js');
 
 mongoose.connect(configDB.url);
 
-require('./config/passport')(passport);
-
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -26,8 +24,6 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 app.use(session({ secret: 'senhasuperincrivelmentesecreta' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(flash());
 
 require('./config/routes.js')(app, passport);
