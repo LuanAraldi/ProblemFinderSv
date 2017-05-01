@@ -1,10 +1,10 @@
 {
   "name": "problemfindersv",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "Luan Carlos Araldi",
+  "license": "ISC",
   "dependencies": {
     "alike": "axiomzen/Alike",
     "babel-cli": "^6.24.0",
