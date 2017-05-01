@@ -7,7 +7,7 @@ var problemSchema = mongoose.Schema({
     sujeira            : Number,
     temperatura        : Number,
     pressaoDeOleo      : Number,
-    solucao            : Number,
+    solucao            : String,
     createdAt          : { type: Date, default: Date.now },
     updatedAt          : { type: Date, default: Date.now }
 });

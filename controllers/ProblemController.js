@@ -23,19 +23,38 @@ module.exports = {
     },
 
     solve: function (req, res) {
-        var payload = req.body.problem;
-        var problem = newModel(payload);
+        var payloadProblem = req.body.problem;
+        var payloadOptions = req.body.options;
+
+        var problem = {
+            consumoCombustivel : payloadProblem.consumoCombustivel,
+            forcaMotor         : payloadProblem.forcaMotor,
+            fumaca             : payloadProblem.fumaca,
+            sujeira            : payloadProblem.sujeira,
+            temperatura        : payloadProblem.temperatura,
+            pressaoDeOleo      : payloadProblem.pressaoDeOleo
+        };
 
         var options = {
-            k = 1,
+            k : 1,
+            debug : true,
             weights: {
-                
+                consumoCombustivel : payloadOptions.consumoCombustivel,
+                forcaMotor         : payloadOptions.forcaMotor,
+                fumaca             : payloadOptions.fumaca,
+                sujeira            : payloadOptions.sujeira,
+                temperatura        : payloadOptions.temperatura,
+                pressaoDeOleo      : payloadOptions.pressaoDeOleo
             }
         }
 
-        Problem.find({}).lean().exec().then(function (problems) {
-
+        var problems = Problem.find({}).lean().exec().then(function (problems) {
+            return problems;
         });
+
+        problems.then(function () {
+            res.send(knn(problem, problems.emitted.fulfill[0], options));
+        })
     }
 };
 

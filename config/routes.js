@@ -19,6 +19,10 @@ module.exports = function(app, passport) {
     app.post('/problem/new', function(req, res) {
         ProblemController.new(req, res);
     });
+
+    app.post('/problem/solve', function (req, res) {
+        ProblemController.solve(req, res);
+    });
 };
 
 function isLoggedIn(req, res, next) {
