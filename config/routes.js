@@ -24,10 +24,3 @@ module.exports = function(app, passport) {
         ProblemController.solve(req, res);
     });
 };
-
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-
-    res.redirect('/');
-}
