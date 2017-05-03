@@ -40,7 +40,7 @@ POST solves a problem
 ```
 
 RETURNS
-Retorna o objeto mais próximo do problema enviado, dentro de debug se encontram a distancia total e a distancia de cada
+Retorna os 10 objetos mais próximos do problema enviado, dentro de debug se encontram a distancia total e a distancia de cada
 variavel com a variavel correspondente do problema enviado, sendo 0 o mais proximo possivel e 1 o mais distante
 
 ```
