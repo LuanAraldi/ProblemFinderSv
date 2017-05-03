@@ -36,7 +36,7 @@ module.exports = {
         };
 
         var options = {
-            k : 1,
+            k : 10,
             debug : true,
             weights: {
                 consumoCombustivel : payloadOptions.consumoCombustivel,
