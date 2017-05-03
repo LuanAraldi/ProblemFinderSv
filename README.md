@@ -17,7 +17,7 @@ POST create a new problem
 ```
 
 POST solves a problem
-> /problem/new
+> /problem/solve
 ```
     {
     	"problem" : {
